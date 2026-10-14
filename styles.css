@@ -1606,3 +1606,31 @@ html { scroll-behavior: smooth; }
   .hero__actions .btn { width: 100%; }
   .trust__label { font-size: .875rem; }
 }
+
+/* ============================================================ */
+/* FONDOS EXPLÍCITOS                                             */
+/* Cada sección define su propio fondo, para no depender del     */
+/* fondo de la página: si el hosting, un tema o un script le     */
+/* pone otro color al body, la landing se ve igual.              */
+/* ============================================================ */
+
+html,
+body {
+  background-color: var(--psd-bg) !important;
+  color: var(--psd-ink);
+}
+main { display: block; background-color: var(--psd-bg); }
+
+/* Secciones claras (Proceso, Ubicación, Cómo funciona) */
+.section { background-color: var(--psd-bg); }
+.section--white { background-color: var(--psd-surface); }
+.section--dark { background-color: var(--psd-primary-dark); }
+
+/* Footer blanco, como en las demás landings */
+.footer { background-color: var(--psd-surface); }
+
+/* La franja azul entre el CTA y el footer: el embed del calendario
+   de GoHighLevel trae un <br> suelto que deja ver el fondo. */
+body > br,
+main + br,
+.cta-final + br { display: none; }
