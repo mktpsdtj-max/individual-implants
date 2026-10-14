@@ -51,9 +51,8 @@
   <body>
     <header class="navbar">
       <div class="container navbar__inner">
-        <a href="#" class="navbar__brand">
-          <div class="navbar__logo"><span class="material-symbols-outlined">sentiment_satisfied</span></div>
-          <span class="navbar__name">Perfect Smile Dental</span>
+        <a href="/es" class="navbar__brand">
+     <img src="/assets/logo.avif" alt="Perfect Smile Dental" />
         </a>
         <nav class="navbar__links">
           <a href="#por-que-tijuana">Por qué Tijuana</a><a href="#sistema">Cómo Funciona</a
@@ -97,42 +96,22 @@
                 miles de dólares.
               </p>
               <div class="hero__actions">
-                <a href="#contacto" class="btn btn--accent">Agendar mi Valoración Gratuita</a>
+                <a href="https://link.perfectsmiledental.com.mx/widget/form/9kd0kgYXwSfFVvRTpFCh" class="btn btn--accent" target="_blank" data-form-open>Agendar mi Valoración Gratuita</a>
                 <a href="#precios" class="btn btn--ghost-light">Ver Precios para Pacientes de EE. UU.</a>
               </div>
             </div>
-            <!-- Derecha: el video -->
+            <!-- Derecha: imagen estática -->
             <div class="hero__media">
-              <div class="video-frame-outer">
-                <div
-                  class="video-frame-inner"
-                  style="aspect-ratio: 4 / 4.6"
-                  data-video-src
-                  data-video-type="mp4"
-                  data-video-poster="https://lh3.googleusercontent.com/aida-public/AB6AXuDkSlZy19tCvBPFuU1gaXbNBUnaUwKr4YlKqcQRgGgi_k1wdOuK2B7FPOrrpzNWXAeZ9ZbVmT0fIoDdSFbA3pqlFHv8jak00_MEKJHmsNA1eIpdRlYcZpUktqcBr-pUKAEkHQiDmz-mmD4j8ed8tOmThIHRqnbVE6IW8wIzd2pJp4npL7X1thjqe25AgrcVTLz4CA91f6N1cF3OtZeKPTpDkddLeSV9sc-iYxB7NHa732k52BO6Nbs"
-                  role="button"
-                  tabindex="0"
-                  aria-label="Así se coloca tu nuevo implante"
-                >
-                  <img
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkSlZy19tCvBPFuU1gaXbNBUnaUwKr4YlKqcQRgGgi_k1wdOuK2B7FPOrrpzNWXAeZ9ZbVmT0fIoDdSFbA3pqlFHv8jak00_MEKJHmsNA1eIpdRlYcZpUktqcBr-pUKAEkHQiDmz-mmD4j8ed8tOmThIHRqnbVE6IW8wIzd2pJp4npL7X1thjqe25AgrcVTLz4CA91f6N1cF3OtZeKPTpDkddLeSV9sc-iYxB7NHa732k52BO6Nbs"
-                    alt="Video: paciente recibiendo un implante dental individual en Tijuana"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div class="video-overlay"></div>
-                  <span class="video-pulse-ring"></span>
-                  <span class="video-play-btn" aria-hidden="true">
-                    <span class="material-symbols-outlined fill-icon" style="font-size: 32px"
-                      >play_arrow</span
-                    >
-                  </span>
-                  <div class="video-caption-chip">
-                    <span class="video-eyebrow">Mira cómo funciona</span>
-                    <span class="video-title">Así se coloca tu nuevo implante</span>
-                  </div>
-                </div>
-              </div>
+              <figure class="hero__photo">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkSlZy19tCvBPFuU1gaXbNBUnaUwKr4YlKqcQRgGgi_k1wdOuK2B7FPOrrpzNWXAeZ9ZbVmT0fIoDdSFbA3pqlFHv8jak00_MEKJHmsNA1eIpdRlYcZpUktqcBr-pUKAEkHQiDmz-mmD4j8ed8tOmThIHRqnbVE6IW8wIzd2pJp4npL7X1thjqe25AgrcVTLz4CA91f6N1cF3OtZeKPTpDkddLeSV9sc-iYxB7NHa732k52BO6Nbs"
+                  alt="Paciente recibiendo un implante dental individual en Perfect Smile Dental Tijuana"
+                  width="960"
+                  height="1104"
+                  fetchpriority="high"
+                  decoding="async"
+                />
+              </figure>
             </div>
           </div>
           <ul class="trust">
@@ -289,27 +268,32 @@
             </div>
           </div>
           <div class="media">
+            <!-- Video en loop: arranca solo, sin sonido. Clic = modal con sonido.
+                 "#t=0.1" muestra el primer fotograma como vista previa mientras carga. -->
             <div class="video-frame-outer">
               <div
-                class="video-frame-inner"
+                class="video-frame-inner is-loop"
                 style="aspect-ratio: 1 / 1"
-                data-video-src
+                data-video-src="assets/single-implant.mp4"
                 data-video-type="mp4"
-                data-video-poster="https://lh3.googleusercontent.com/aida-public/AB6AXuDkSlZy19tCvBPFuU1gaXbNBUnaUwKr4YlKqcQRgGgi_k1wdOuK2B7FPOrrpzNWXAeZ9ZbVmT0fIoDdSFbA3pqlFHv8jak00_MEKJHmsNA1eIpdRlYcZpUktqcBr-pUKAEkHQiDmz-mmD4j8ed8tOmThIHRqnbVE6IW8wIzd2pJp4npL7X1thjqe25AgrcVTLz4CA91f6N1cF3OtZeKPTpDkddLeSV9sc-iYxB7NHa732k52BO6Nbs"
                 role="button"
                 tabindex="0"
                 aria-label="De la raíz a la corona"
               >
-                <img
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkSlZy19tCvBPFuU1gaXbNBUnaUwKr4YlKqcQRgGgi_k1wdOuK2B7FPOrrpzNWXAeZ9ZbVmT0fIoDdSFbA3pqlFHv8jak00_MEKJHmsNA1eIpdRlYcZpUktqcBr-pUKAEkHQiDmz-mmD4j8ed8tOmThIHRqnbVE6IW8wIzd2pJp4npL7X1thjqe25AgrcVTLz4CA91f6N1cF3OtZeKPTpDkddLeSV9sc-iYxB7NHa732k52BO6Nbs"
-                  alt="Video: cómo funciona un implante dental individual"
-                  loading="lazy"
-                  decoding="async"
-                />
+                <video
+                  class="video-frame__loop"
+                  src="assets/single-implant.mp4#t=0.1"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                  aria-hidden="true"
+                ></video>
                 <div class="video-overlay"></div>
                 <span class="video-pulse-ring"></span>
                 <span class="video-play-btn" aria-hidden="true">
-                  <span class="material-symbols-outlined fill-icon" style="font-size: 32px">play_arrow</span>
+                  <span class="material-symbols-outlined fill-icon" style="font-size: 26px">volume_up</span>
                 </span>
                 <div class="video-caption-chip">
                   <span class="video-eyebrow">Video explicativo</span>
@@ -434,7 +418,7 @@
                   <dd class="spec__value">1 año <span class="spec__detail">en implante y en corona</span></dd>
                 </div>
               </dl>
-              <a href="#contacto" class="btn btn--accent tier__cta"> Agendar mi valoración </a>
+              <a href="https://link.perfectsmiledental.com.mx/widget/booking/Z9i3B59TA2s7kxjc4u88" class="btn btn--accent tier__cta" target="_blank" data-calendar-open>Agendar mi valoración</a>
             </article>
             <article class="tier">
               <header class="tier__head">
@@ -457,7 +441,7 @@
                   </dd>
                 </div>
               </dl>
-              <a href="#contacto" class="btn btn--accent tier__cta"> Agendar mi valoración </a>
+              <a href="https://link.perfectsmiledental.com.mx/widget/booking/Z9i3B59TA2s7kxjc4u88" class="btn btn--accent tier__cta" target="_blank" data-calendar-open>Agendar mi valoración</a>
             </article>
             <article class="tier tier--dark">
               <header class="tier__head">
@@ -482,7 +466,7 @@
                   </dd>
                 </div>
               </dl>
-              <a href="#contacto" class="btn btn--white tier__cta"> Agendar mi valoración </a>
+              <a href="https://link.perfectsmiledental.com.mx/widget/booking/Z9i3B59TA2s7kxjc4u88" class="btn btn--white tier__cta" target="_blank" data-calendar-open>Agendar mi valoración</a>
             </article>
           </div>
           <div class="shared">
@@ -652,14 +636,14 @@
                 <span class="fact__label">De 2 a 3 visitas para completar tu tratamiento</span>
               </li>
             </ul>
-            <a
+            <!-- <a
               href="https://www.google.com/maps/dir/?api=1&destination=32.5303859,-117.024724"
               class="btn btn--accent"
               target="_blank"
               rel="noopener"
             >
               <span class="material-symbols-outlined" style="font-size: 20px">directions</span> Cómo llegar
-            </a>
+            </a> -->
           </div>
           <div class="loc__map">
             <div class="map-frame">
@@ -686,21 +670,14 @@
             Smile Dental Tijuana puede devolverte la pieza que te falta de forma rápida, segura y accesible.
           </p>
           <div class="cta-final__actions">
-            <a href="tel:+18008889999" class="btn btn--white btn--full"
-              >Solicitar mi Presupuesto y Plan de Viaje</a
-            >
-            <a href="#" class="btn btn--ghost-light btn--full">Escríbenos por WhatsApp</a>
+            <a href="https://link.perfectsmiledental.com.mx/widget/form/9kd0kgYXwSfFVvRTpFCh" class="btn btn--white btn--full" target="_blank" data-form-open>Solicitar mi Presupuesto y Plan de Viaje</a>
           </div>
           <div class="contact-row">
-            <a href="tel:+18008889999" class="contact-pill">
-              <span class="material-symbols-outlined" style="font-size: 18px">call</span> Toll Free US/MX
+            <a href="https://www.t2ll.com/auth/sms-redirect?phoneNumber=16198155283&msg=Hola%2C%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n" class="contact-pill" target="_blank" rel="noopener">
+              <span class="material-symbols-outlined" style="font-size: 18px">sms</span> Envíanos un Mensaje
             </a>
-            <a href="#" class="contact-pill">
-              <span class="material-symbols-outlined" style="font-size: 18px">chat</span> WhatsApp
-            </a>
-            <a href="#ubicacion" class="contact-pill">
-              <span class="material-symbols-outlined" style="font-size: 18px">flight_takeoff</span> Cruce
-              Fronterizo
+            <a href="https://wa.me/16198155283?text=Hola,%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n." class="contact-pill" target="_blank" rel="noopener">
+              <svg class="contact-pill__svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.57.94.95-3.48-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.23-9.43 9.44-9.43a9.37 9.37 0 0 1 6.67 2.77 9.37 9.37 0 0 1 2.76 6.67c0 5.2-4.23 9.43-9.44 9.43m8.03-17.46A11.27 11.27 0 0 0 12.05.72C5.8.72.7 5.8.7 12.07c0 2 .52 3.95 1.52 5.67L.6 23.4l5.8-1.52a11.33 11.33 0 0 0 5.65 1.44h.01c6.25 0 11.35-5.09 11.35-11.35 0-3.03-1.18-5.88-3.33-8.02"/></svg> WhatsApp
             </a>
           </div>
         </div>
@@ -731,6 +708,71 @@
         <div class="video-modal__content" id="psd-video-modal-content"></div>
       </div>
     </div>
+    <!-- Modal: formulario de contacto (GoHighLevel). Lo abre cualquier botón con data-form-open -->
+    <div class="form-modal" id="psd-form-modal" aria-hidden="true">
+      <div class="form-modal__backdrop" data-form-close></div>
+      <div class="form-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="psd-form-title">
+        <div class="form-modal__head">
+          <div>
+            <h2 class="form-modal__title" id="psd-form-title">Agenda tu valoración gratuita</h2>
+            <p class="form-modal__sub">Déjanos tus datos y nuestro equipo te contactará.</p>
+          </div>
+          <button type="button" class="form-modal__close" data-form-close aria-label="Cerrar formulario">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+        <div class="form-modal__body">
+          <iframe
+            src="https://link.perfectsmiledental.com.mx/widget/form/9kd0kgYXwSfFVvRTpFCh"
+            style="width:100%;height:100%;border:none;border-radius:3px"
+            id="inline-9kd0kgYXwSfFVvRTpFCh"
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="Landing Contact Form "
+            data-height="882"
+            data-layout-iframe-id="inline-9kd0kgYXwSfFVvRTpFCh"
+            data-form-id="9kd0kgYXwSfFVvRTpFCh"
+            data-cookie-consent="true"
+            data-cookie-consent-provider="auto"
+            title="Landing Contact Form "
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: calendario de citas (GoHighLevel). Lo abre cualquier botón con data-calendar-open -->
+    <div class="form-modal form-modal--wide" id="psd-calendar-modal" aria-hidden="true">
+      <div class="form-modal__backdrop" data-form-close></div>
+      <div class="form-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="psd-calendar-title">
+        <div class="form-modal__head">
+          <div>
+            <h2 class="form-modal__title" id="psd-calendar-title">Agenda tu valoración gratuita</h2>
+            <p class="form-modal__sub">Elige el día y la hora que mejor te acomoden.</p>
+          </div>
+          <button type="button" class="form-modal__close" data-form-close aria-label="Cerrar calendarulario">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+        <div class="form-modal__body form-modal__body--calendar">
+          <iframe
+            src="https://link.perfectsmiledental.com.mx/widget/booking/Z9i3B59TA2s7kxjc4u88"
+            allow="payment"
+            style="width: 100%; border: none; overflow: hidden"
+            scrolling="no"
+            id="Z9i3B59TA2s7kxjc4u88_1792016738689"
+            title="Agenda tu valoración gratuita"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts: primero el de GoHighLevel (ajusta el alto de formulario y calendario), luego el de la página -->
+    <script src="https://link.perfectsmiledental.com.mx/js/form_embed.js" type="text/javascript"></script>
     <script src="/main.js" defer></script>
   </body>
 </html>

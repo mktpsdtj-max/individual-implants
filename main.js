@@ -150,3 +150,114 @@
     if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
   });
 })();
+
+/* ------------------------------------------------------------
+   5. Videos en loop (vista previa automática)
+   Se reproducen solos, sin sonido y en bucle. Al hacer clic se
+   abre el modal con sonido y controles (bloque 4).
+   - Se pausan cuando salen de pantalla, para no gastar batería.
+   - Se pausan mientras el modal está abierto.
+   - Si el usuario pidió "reducir movimiento" en su sistema,
+     no se reproducen solos.
+   ------------------------------------------------------------ */
+(function loopVideos() {
+  const videos = Array.from(document.querySelectorAll('.video-frame__loop'));
+  if (!videos.length) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const modal = document.getElementById('psd-video-modal');
+  const inView = new Map();
+
+  const shouldPlay = (v) =>
+    !reduceMotion && inView.get(v) && !(modal && modal.classList.contains('is-open'));
+
+  const sync = (v) => {
+    if (shouldPlay(v)) {
+      v.play().catch(() => {}); // si el navegador bloquea el autoplay, se queda el poster
+    } else {
+      v.pause();
+    }
+  };
+
+  videos.forEach((v) => {
+    v.muted = true; // obligatorio para autoplay en iPhone y Chrome
+    if (reduceMotion) v.removeAttribute('autoplay');
+  });
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          inView.set(e.target, e.isIntersecting);
+          sync(e.target);
+        });
+      },
+      { threshold: 0.25 }
+    );
+    videos.forEach((v) => io.observe(v));
+  } else {
+    videos.forEach((v) => { inView.set(v, true); sync(v); });
+  }
+
+  if (modal) {
+    new MutationObserver(() => videos.forEach(sync)).observe(modal, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+  }
+})();
+
+/* ------------------------------------------------------------
+   6. Modales de formulario y calendario (GoHighLevel)
+   - data-form-open      → abre el formulario de contacto
+   - data-calendar-open  → abre el calendario de citas
+   Se cierran con la X, clic afuera o Escape.
+   El href de cada botón se queda como respaldo: si el JS falla,
+   el enlace funciona igual que antes.
+   El calendario se carga hasta que alguien lo abre (data-src),
+   para no hacer más lenta la página.
+   ------------------------------------------------------------ */
+(function embedModals() {
+  function setup(modalId, triggerAttr) {
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
+
+    const closeBtn = modal.querySelector('.form-modal__close');
+    let lastTrigger = null;
+
+    function open(e) {
+      e.preventDefault();
+      lastTrigger = e.currentTarget;
+
+      // Carga diferida: el iframe recibe su src la primera vez que se abre
+      modal.querySelectorAll('iframe[data-src]').forEach((frame) => {
+        if (!frame.getAttribute('src')) frame.setAttribute('src', frame.dataset.src);
+      });
+
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function close() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (lastTrigger) lastTrigger.focus();
+    }
+
+    document.querySelectorAll(`[${triggerAttr}]`).forEach((el) => el.addEventListener('click', open));
+
+    modal.addEventListener('click', (e) => {
+      if (e.target.closest('[data-form-close]')) close();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) close();
+    });
+  }
+
+  setup('psd-form-modal', 'data-form-open');
+  setup('psd-calendar-modal', 'data-calendar-open');
+})();
